@@ -15,4 +15,4 @@ jobs:
       - name: Run Selenium Test
         run: |
           cd codigo-testes/selenium
-          python login_test.py
+          python login_teste.py
