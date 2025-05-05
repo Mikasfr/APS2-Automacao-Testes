@@ -1,0 +1,25 @@
+name: CI - Cypress
+on: [push]
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Install Dependencies
+        run: |
+          cd codigo-testes/cypress
+          npm install
+      - name: Run Cypress
+        run: |
+          cd codigo-testes/cypress
+          npx cypress run
+      - name: Upload Videos
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-videos
+          path: codigo-testes/cypress/cypress/videos/
