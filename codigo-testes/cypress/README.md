@@ -24,3 +24,20 @@ Testes automatizados de interface web usando o **Cypress** para o APS 2. O teste
    ```bash
    npm install
    ```
+
+## Integração com GitHub Actions (CI/CD)
+
+- **Workflow**: `.github/workflows/ci-cypress.yml`.
+- **Gatilho**: Roda a cada `push` na branch `main`.
+- **Passos**:
+  1. Checkout do repositório.
+  2. Configura Node.js.
+  3. Instala dependências.
+  4. Instala o binário do Cypress com `cypress install`.
+  5. Executa `npx cypress run`.
+
+## Resultados
+
+- Saída: Log confirmando login bem-sucedido.
+- Tempo médio de execução: ~2 segundos.
+- Vídeos: Gerados em `cypress/cypress/videos/` localmente. Arquivos salvos em `relatorio/videos/` no repositório.
