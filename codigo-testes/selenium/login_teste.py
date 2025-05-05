@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
@@ -15,7 +16,8 @@ chrome_options.add_argument("--user-data-dir=/tmp/chrome-user-data")  # Diretór
 start_time = time.time()
 
 # Configura o driver
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
 # Acessa o site
 driver.get("https://www.saucedemo.com/")
