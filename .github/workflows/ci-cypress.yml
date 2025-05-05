@@ -17,9 +17,3 @@ jobs:
         run: |
           cd codigo-testes/cypress
           npx cypress run
-      - name: Upload Videos
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-videos
-          path: codigo-testes/cypress/cypress/videos/
