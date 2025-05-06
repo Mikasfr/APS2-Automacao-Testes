@@ -11,7 +11,6 @@ Trabalho acadêmico para comparar ferramentas de automação de testes de softwa
 - Selenium (Web UI)
 - Cypress (Web UI/API)
 - Appium (Mobile)
-- Postman (API)
 
 ## Estrutura do Repositório
 
